@@ -185,17 +185,17 @@ namespace Project_1
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Day>()
-                .HasMany(p => p.Subjects)
-                .WithMany(p => p.Days)
+                .HasMany(b => b.Subjects)
+                .WithMany(b => b.Days)
                 .UsingEntity<DaySubject>(
                     j => j
-                        .HasOne(pt => pt.Subject)
-                        .WithMany(p => p.DaysSubjects)
-                        .HasForeignKey(pt => pt.SubjectId),
+                        .HasOne(b => b.Subject)
+                        .WithMany(b => b.DaysSubjects)
+                        .HasForeignKey(b => b.SubjectId),
                     j => j
-                        .HasOne(pt => pt.Day)
-                        .WithMany(t => t.DaysSubjects)
-                        .HasForeignKey(pt => pt.DayId));
+                        .HasOne(b => b.Day)
+                        .WithMany(b => b.DaysSubjects)
+                        .HasForeignKey(b => b.DayId));
         }
     }
 }
