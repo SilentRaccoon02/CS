@@ -8,7 +8,7 @@ namespace Project_1
         {
             const string pageUri1 = "https://timetable.spbu.ru/AMCP/StudentGroupEvents/Primary/303077/2021-11-08";
             const string pageUri2 = "https://timetable.spbu.ru/AMCP/StudentGroupEvents/Primary/303077/2021-11-15";
-            
+
             var week1FromUri = TimetableTools.Parse(pageUri1);
             TimetableTools.ToDb(week1FromUri);
 
